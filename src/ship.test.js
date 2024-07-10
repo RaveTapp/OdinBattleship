@@ -4,7 +4,7 @@ describe("Ship receiving hits", () => {
     test("Register 1 hit", () => {
         let testShip = new ship(4);
         testShip.hit();
-        expect(testShip.beenHit).toBe(1);
+        expect(testShip.getNumOfHits()).toBe(1);
     })
 
     test("More hits than ship length", () => {
@@ -12,7 +12,7 @@ describe("Ship receiving hits", () => {
         for(let i = 0; i < 5; i++){
             testShip.hit();
         }
-        expect(testShip.beenHit).toBe(3);
+        expect(testShip.getNumOfHits()).toBe(3);
     })
 
     test("Ship is originaly not sunk", () => {
@@ -32,6 +32,6 @@ describe("Ship receiving hits", () => {
             testShip.hit();
         }
         expect(testShip.isSunk()).toBeTruthy();
-        expect(testShip.beenHit).toBe(5);
+        expect(testShip.getNumOfHits()).toBe(5);
     })
 });

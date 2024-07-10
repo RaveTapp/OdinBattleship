@@ -5,6 +5,7 @@ describe("Ship receiving hits", () => {
         let testShip = new ship(4);
         testShip.hit();
         expect(testShip.getNumOfHits()).toBe(1);
+        expect(testShip.getNumOfHits()).toBe(1);
     })
 
     test("More hits than ship length", () => {
@@ -12,6 +13,7 @@ describe("Ship receiving hits", () => {
         for(let i = 0; i < 5; i++){
             testShip.hit();
         }
+        expect(testShip.getNumOfHits()).toBe(3);
         expect(testShip.getNumOfHits()).toBe(3);
     })
 

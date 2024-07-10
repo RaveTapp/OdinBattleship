@@ -7,6 +7,10 @@ export class ship{
     }
 
     hit(){
-        this.beenHit++;
+        if(!this.isSunk()) this.beenHit++;
+    }
+
+    isSunk(){
+        return this.beenHit === this.length;
     }
 }
